@@ -7,7 +7,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building app...'
-                sh ''yarn install'
+                sh 'yarn install'
             }  
             post{
 				failure{
@@ -19,7 +19,7 @@ pipeline{
 				success{
 					emailext attachLog: true,
 						body: "${currentBuild.currentResult}: ${currentBuild.fullDisplayName}",
-                        to: ''simonconbrio@gmail.com',
+                        to: 'simonconbrio@gmail.com',
                         subject: "Jenkins build succeed ${env.BUILD_NUMBER}"
 				}
 			}   
@@ -54,13 +54,13 @@ pipeline{
 				failure{
 					emailext attachLog: true,
 						body: "${currentBuild.currentResult}: ${currentBuild.fullDisplayName}",
-                        to: ''simonconbrio@gmail.com',
+                        to: 'simonconbrio@gmail.com',
                         subject: "Jenkins deploy failed ${env.BUILD_NUMBER}"
 				}
 				success{
 					emailext attachLog: true,
 						body: "${currentBuild.currentResult}: ${currentBuild.fullDisplayName}",
-                        to: ''simonconbrio@gmail.com',
+                        to: 'simonconbrio@gmail.com',
                         subject: "Jenkins deploy succeed ${env.BUILD_NUMBER}"
 				}
 			}
