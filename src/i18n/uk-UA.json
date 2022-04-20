@@ -315,6 +315,7 @@
   "conversationEditTimestamp": "Відредаговане: {{date}}",
   "conversationFederationIndicator": "Federated",
   "conversationFileAssetRestricted": "Receiving files is prohibited",
+  "conversationFooterContacts": "Contacts",
   "conversationGuestIndicator": "Гість",
   "conversationImageAssetRestricted": "Receiving images is prohibited",
   "conversationJoin.buttonExistentAccountOpen": "Відкрити в {brandName}",

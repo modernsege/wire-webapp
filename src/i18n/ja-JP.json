@@ -315,6 +315,7 @@
   "conversationEditTimestamp": "{{date}}: 編集済み",
   "conversationFederationIndicator": "Federated",
   "conversationFileAssetRestricted": "Receiving files is prohibited",
+  "conversationFooterContacts": "Contacts",
   "conversationGuestIndicator": "ゲスト",
   "conversationImageAssetRestricted": "Receiving images is prohibited",
   "conversationJoin.buttonExistentAccountOpen": "{brandName} を開く",

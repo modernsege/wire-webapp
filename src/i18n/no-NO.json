@@ -315,6 +315,7 @@
   "conversationEditTimestamp": "Redigert: {{date}}",
   "conversationFederationIndicator": "Federated",
   "conversationFileAssetRestricted": "Receiving files is prohibited",
+  "conversationFooterContacts": "Contacts",
   "conversationGuestIndicator": "Gjest",
   "conversationImageAssetRestricted": "Receiving images is prohibited",
   "conversationJoin.buttonExistentAccountOpen": "Open in {brandName}",

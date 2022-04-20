@@ -315,6 +315,7 @@
   "conversationEditTimestamp": "Taisyta: {{date}}",
   "conversationFederationIndicator": "Federated",
   "conversationFileAssetRestricted": "Receiving files is prohibited",
+  "conversationFooterContacts": "Contacts",
   "conversationGuestIndicator": "Svečias",
   "conversationImageAssetRestricted": "Receiving images is prohibited",
   "conversationJoin.buttonExistentAccountOpen": "Atverti programoje „{brandName}“",

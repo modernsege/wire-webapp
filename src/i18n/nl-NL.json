@@ -315,6 +315,7 @@
   "conversationEditTimestamp": "Bewerkt op {{date}}",
   "conversationFederationIndicator": "Federated",
   "conversationFileAssetRestricted": "Receiving files is prohibited",
+  "conversationFooterContacts": "Contacts",
   "conversationGuestIndicator": "Gast",
   "conversationImageAssetRestricted": "Receiving images is prohibited",
   "conversationJoin.buttonExistentAccountOpen": "Open in {brandName}",

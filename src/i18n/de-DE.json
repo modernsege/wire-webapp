@@ -315,6 +315,7 @@
   "conversationEditTimestamp": "Bearbeitet: {{date}}",
   "conversationFederationIndicator": "Föderiert",
   "conversationFileAssetRestricted": "Empfang von Dateien ist verboten",
+  "conversationFooterContacts": "Contacts",
   "conversationGuestIndicator": "Gast",
   "conversationImageAssetRestricted": "Empfang von Bildern ist verboten",
   "conversationJoin.buttonExistentAccountOpen": "In {brandName} öffnen",

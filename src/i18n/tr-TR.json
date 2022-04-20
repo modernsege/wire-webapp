@@ -315,6 +315,7 @@
   "conversationEditTimestamp": "{{date}} ’da düzenlenmiş",
   "conversationFederationIndicator": "Federated",
   "conversationFileAssetRestricted": "Receiving files is prohibited",
+  "conversationFooterContacts": "Contacts",
   "conversationGuestIndicator": "Misafir",
   "conversationImageAssetRestricted": "Receiving images is prohibited",
   "conversationJoin.buttonExistentAccountOpen": "{brandName} 'de aç",
