@@ -3,11 +3,30 @@ pipeline{
         docker { image 'node:16.0' }
     }
     
-    stages{
+ stages{
+        stage('Build'){
+            steps{
+                echo 'Building app...'
+                sh 'yarn install'
+            }  
+            post{
+				failure{
+					emailext attachLog: true,
+						body: "${currentBuild.currentResult}: ${currentBuild.fullDisplayName}",
+                        to: 'simonconbrio@gmail.com',
+                        subject: "Jenkins build failed ${env.BUILD_NUMBER}"
+				}
+				success{
+					emailext attachLog: true,
+						body: "${currentBuild.currentResult}: ${currentBuild.fullDisplayName}",
+                        to: 'simonconbrio@gmail.com',
+                        subject: "Jenkins build succeed ${env.BUILD_NUMBER}"
+				}
+			}   
+        } 
         stage('Test'){
             steps{
                 echo 'Testing app...'
-				sh 'yarn install'
                 sh 'yarn test:server' 
             }
             post{
@@ -26,6 +45,5 @@ pipeline{
 			}
      
         }  
-
-    }
+        }  
  }
