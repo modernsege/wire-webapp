@@ -48,7 +48,9 @@ pipeline{
 		stage('Deploy'){
 			steps{
 				echo 'Deploying...'
-				sh 'docker build -t deploy -f Dockerfile .'
+				dir('/var/jenkins_home/workspace/devOpsLab07/docker'){
+					sh 'docker-compose push'
+				}
 			}
 			post{
 				failure{
