@@ -44,6 +44,26 @@ pipeline{
 				}
 			}
      
-        }  
+        } 
+		stage('Deploy'){
+			steps{
+				echo 'Deploying...'
+				sh 'docker build -t deploy -f Dockerfile /deploy-dockerfile/'
+			}
+			post{
+				failure{
+					emailext attachLog: true,
+						body: "${currentBuild.currentResult}: ${currentBuild.fullDisplayName}",
+                        to: 'simonconbrio@gmail.com',
+                        subject: "Jenkins deploy failed ${env.BUILD_NUMBER}"
+				}
+				success{
+					emailext attachLog: true,
+						body: "${currentBuild.currentResult}: ${currentBuild.fullDisplayName}",
+                        to: 'simonconbrio@gmail.com',
+                        subject: "Jenkins deploy succeed ${env.BUILD_NUMBER}"
+				}
+			}
+        }
         }  
  }
