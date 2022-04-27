@@ -1,10 +1,5 @@
 pipeline{
-    agent {
-        docker { 
-			image 'node:16.0' 
-		}
-		label 'ci-cd'
-    }
+    agent any
     
  stages{
         stage('Build'){
