@@ -7,7 +7,9 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building app...'
-                sh 'docker-compose  build  build-agent'
+				dir('/var/jenkins_home/workspace/devOpsLab07'){
+					sh 'docker-compose  build  build-agent'
+				}
             }  
             post{
 				failure{
