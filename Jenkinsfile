@@ -7,7 +7,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building app...'
-                sh 'yarn install'
+                sh 'docker-compose  build  build-agent'
             }  
             post{
 				failure{
@@ -27,7 +27,7 @@ pipeline{
         stage('Test'){
             steps{
                 echo 'Testing app...'
-                sh 'yarn test:server' 
+                sh 'docker-compose  build  test-agent' 
             }
             post{
 				failure{
@@ -43,14 +43,12 @@ pipeline{
                         subject: "Jenkins test succeed ${env.BUILD_NUMBER}"
 				}
 			}
-     
-        } 
-		stage('Deploy'){
+        }
+		
+        stage('Deploy'){
 			steps{
 				echo 'Deploying...'
-				dir('/var/jenkins_home/workspace/devOpsLab07/docker'){
-					sh 'docker-compose push'
-				}
+				sh 'docker-compose  up -d build-agent'
 			}
 			post{
 				failure{
@@ -66,6 +64,6 @@ pipeline{
                         subject: "Jenkins deploy succeed ${env.BUILD_NUMBER}"
 				}
 			}
-        }
+        }		
         }  
  }

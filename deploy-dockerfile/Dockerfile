@@ -1,16 +1,16 @@
-FROM node:12-alpine
+FROM ubuntu:latest
 
-# For some extra dependencies...
-RUN apk add --no-cache dumb-init git bash
+ENV TZ=Europe/Warsaw
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ  /etc/timezone
+RUN apt-get -y autoclean
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt-get install -y build-essential
+RUN apt-get -y install git
+RUN apt-get install nodejs -y
+RUN apt-get install yarn -y
+RUN cd ~
 
-COPY /server .
-COPY /run.sh .
-COPY /.env.defaults .
-ENV NODE_PATH=/node_modules
-ENV PATH=$PATH:/node_modules/.bin
-
-RUN yarn --production --ignore-scripts
-
-EXPOSE 8080
-
-ENTRYPOINT ["dumb-init", "--", "/bin/bash", "/run.sh"]
+COPY . wire-webapp/
+WORKDIR wire-webapp
+RUN ls
